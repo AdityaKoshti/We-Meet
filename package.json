@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/AdityaKoshti/We-Meet#readme",
   "dependencies": {
-    "bootstrap": "^5.1.3"
+    "bootstrap": "^5.1.3",
+    "gulp": "^4.0.2",
+    "gulp-purgecss": "^4.1.3",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.52.3"
   }
 }
