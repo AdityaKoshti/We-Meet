@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Product() {
   return (
@@ -25,4 +25,4 @@ function Product() {
   );
 }
 
-export default Product
+export default Product;

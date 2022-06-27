@@ -1,5 +1,5 @@
-import React from 'react'
-import logo from '../assets/images/logo.svg'
+import React from "react";
+import logo from "../assets/images/logo.svg";
 function Footer() {
   return (
     <div>
@@ -41,4 +41,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default Footer;

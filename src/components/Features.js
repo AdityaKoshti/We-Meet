@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 
 function Features() {
   return (
     <div>
       <>
-
         {/* Product feature */}
         <div className="container m-5 p-5" data-aos="fade-right">
           <div className="row">
@@ -37,4 +36,4 @@ function Features() {
   );
 }
 
-export default Features
+export default Features;

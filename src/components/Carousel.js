@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Carousel() {
   return (
@@ -67,4 +67,4 @@ function Carousel() {
   );
 }
 
-export default Carousel
+export default Carousel;

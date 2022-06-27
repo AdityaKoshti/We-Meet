@@ -1,5 +1,5 @@
-import React from 'react'
-import logo from '../assets/images/logo.svg';
+import React from "react";
+import logo from "../assets/images/logo.svg";
 
 function Navbar() {
   return (
@@ -45,4 +45,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
