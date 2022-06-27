@@ -1,4 +1,5 @@
 import React from 'react'
+import img from "../assets/images/meeting.png";
 
 function Content() {
   return (
@@ -9,7 +10,7 @@ function Content() {
           <div className="row align-items-center justify-content-center">
             <div className="col">
               <img
-                src="/assets/images/meeting.png"
+                src={img}
                 alt="meeting"
                 className="img-fluid"
               />
