@@ -4,7 +4,7 @@ import card from '../assets/images/card.png'
 
 function Carousel() {
   return (
-    <div>
+    <div className='m-5 p-5'>
       <div
         id="carouselExampleControls"
         className="carousel carousel-dark slide"
