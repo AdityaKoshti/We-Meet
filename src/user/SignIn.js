@@ -1,50 +1,55 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
-    const [name, setName] = useState("");
+const SignIn = () => {
+    
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-    const signUp = (user) =>
-        fetch("http://localhost:8080/signup", {
-            method: "POST",
+    const signIn = (user) => (
+        fetch(`${process.env.REACT_APP_API_URL}/signin`, {
+            method: 'POST',
             headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(user),
+            body: JSON.stringify(user)
+
         })
-            .then((res) => res.json())
-            .catch((error) => console.error("Error:", error));
+            .then(res => res.json())
+            .catch(error => console.error('Error:', error))
+    )
 
     const handleOnChange = (e) => {
         setError("");
         setSuccess("");
         const { name, value } = e.target;
-        if (name === "name") {
-            setName(value);
-        } else if (name === "email") {
+        if (name === "email") {
             setEmail(value);
         } else if (name === "password") {
             setPassword(value);
         }
     };
+    
+    const authenticate = (jwt, next) => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('jwt', JSON.stringify(jwt));
+            next();
+        }
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const user = { name, email, password };
-        signUp(user).then((data) => {
+        const user = { email, password };
+        signIn(user).then((data) => {
             if (data.error) {
                 setError(data.error);
             } else {
-                setSuccess(data.message);
-                setError("");
-                setName("");
-                setEmail("");
-                setPassword("");
+                authenticate(data, () => {
+                    // setRedirectToRefer(true);
+                })
             }
         });
     };
@@ -82,7 +87,7 @@ const SignUp = () => {
                                 <div className="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                                     <div>
                                         <h2 className="mt-5 mb-5 text-end p-2 text-white">
-                                            Sign Up
+                                            Sign In
                                         </h2>
                                     </div>
                                     <div>
@@ -109,19 +114,6 @@ const SignUp = () => {
                                 </div>
                                 <div className="divider d-flex align-items-center my-4">
                                     <p className="text-center fw-bold mx-3 mb-0 text-white">Or</p>
-                                </div>
-                                {/* Name input */}
-                                <div className="form-outline mb-4">
-                                    <input
-                                        type="text"
-                                        id="form3Example3"
-                                        className="form-control form-control-lg"
-                                        placeholder="Enter name"
-                                        onChange={handleOnChange}
-                                    />
-                                    <label className="form-label text-white" htmlFor="form3Example3">
-                                        Name
-                                    </label>
                                 </div>
                                 {/* Email input */}
                                 <div className="form-outline mb-4">
@@ -162,9 +154,9 @@ const SignUp = () => {
                                             Remember me
                                         </label>
                                     </div>
-                                    {/* <a href="#!" className="text-body text-white">
+                                    <a href="#!" className="text-body text-white">
                                         Forgot password?
-                                    </a> */}
+                                    </a>
                                 </div>
                                 <div className="text-center text-lg-start mt-4 pt-2">
                                     <button
@@ -173,12 +165,12 @@ const SignUp = () => {
                                         style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
                                         onClick={handleSubmit}
                                     >
-                                        Register
+                                        Login
                                     </button>
                                     <p className="small fw-bold mt-2 pt-1 mb-0 text-white">
-                                        Already have an account ?{" "}
-                                        <Link to="/signin" className="link-danger text-white">
-                                            Login
+                                        Don't have an account?{" "}
+                                        <Link to="/signup" className="link-danger text-white">
+                                            Register
                                         </Link>
                                     </p>
                                 </div>
@@ -223,4 +215,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default SignIn;
