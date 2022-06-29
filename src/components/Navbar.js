@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div>
       <section id="#navbar">
-        <nav className="navbar navbar-expand-lg my-2 py-2">
+        <nav className="navbar navbar-expand-lg mb-5 py-2 custom-bg">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
               <h1 className="display-5 fw-bold text-black">
