@@ -65,7 +65,7 @@ const SignUp = () => {
     </div>
   );
   const showForm = () => (
-    <div className="container-sm  ">
+    <div className="container-sm" data-aos="flip-right">
       <section className="vh-100 ">
         <div className="container-fluid h-custom">
           <div className="row d-flex justify-content-center align-items-center h-100 bg-secondary m-5">
