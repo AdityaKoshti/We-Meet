@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import {signUp} from "../auth/index"
 
 const SignUp = () => {
     const [name, setName] = useState("");
@@ -8,18 +9,7 @@ const SignUp = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-    const signUp = (user) =>
-        fetch("http://localhost:8080/signup", {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-        })
-            .then((res) => res.json())
-            .catch((error) => console.error("Error:", error));
-
+    
     const handleOnChange = (e) => {
         setError("");
         setSuccess("");

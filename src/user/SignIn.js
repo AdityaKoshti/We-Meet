@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { signIn, authenticate } from "../auth";
 
 const SignIn = () => {
     
@@ -8,19 +9,7 @@ const SignIn = () => {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
 
-    const signIn = (user) => (
-        fetch(`${process.env.REACT_APP_API_URL}/signin`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-
-        })
-            .then(res => res.json())
-            .catch(error => console.error('Error:', error))
-    )
+    
 
     const handleOnChange = (e) => {
         setError("");
@@ -32,13 +21,8 @@ const SignIn = () => {
             setPassword(value);
         }
     };
+
     
-    const authenticate = (jwt, next) => {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('jwt', JSON.stringify(jwt));
-            next();
-        }
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
