@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# We-meet : A google meet clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![We-meet banner](front_img.png)](https://www.canva.com/design/DAFE28aNZE4/RvAHFSh-g6LQacmx4W7uEA/edit?utm_content=DAFE28aNZE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-## Available Scripts
+This repo houses the assets used to build the We-meet website, available at https://wemeet.io (Not currently functional).
 
-In the project directory, you can run:
+### Creating a PR
 
-### `npm start`
+In general, all PRs should be made against the `main` branch to update the edge version of the docs. If you are making a change that also affects released versions, indicate which release branches to update in your PR so a website maintainer can backport your changes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+If you are making a change that is specific to a single released version of documentation, make a PR against that branch (`release-X`). For example, if you are fixing something specific to v2.1.0 you should make a PR against the release-2.1.0 branch only. If you are fixing something that impacts v2.1.0 docs and all future versions, you should make the PR against the `main` branch so the change can also be backported to the v2.1.0 docs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Publishing the website
 
-### `npm test`
+The We-meet website is published automatically on the [Netlify](https://netlify.com) platform. Whenever changes are merged, the site is re-built and re-deployed, usually within about one minute.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run the We-meet website locally
 
-### `npm run build`
+### Step 1: Clone project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+git clone git@github.com:AdityaKoshti/We-Meet.git
+cd We-Meet
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Step 2: Install npm dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm i
+```
 
-### `npm run eject`
+## Step 3: Run We-meet in server mode
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+make serve
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This starts up the local Hugo server on http://localhost:8080. As you make changes, the site refreshes automatically in your browser.
