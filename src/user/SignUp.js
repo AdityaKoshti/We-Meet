@@ -81,7 +81,7 @@ const SignUp = () => {
                                             type="button"
                                             className="btn btn-primary btn-floating mx-1"
                                         >
-                                            <i class="fa-brands fa-google"></i>
+                                            <i className="fa-brands fa-google"></i>
                                         </button>
                                         <button
                                             type="button"
