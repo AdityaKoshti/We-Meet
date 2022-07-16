@@ -5,11 +5,11 @@ function Navbar() {
   return (
     <div>
       <section id="#navbar">
-        <nav className="navbar navbar-expand-lg my-2 py-2">
+        <nav className="navbar navbar-expand-lg mb-5 py-2 custom-bg">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">
-              <h1 className="display-5 fw-bold text-black">
-                <img src={logo} alt="logo" className="img-fluid" />
+              <h1 className="display-4 text-white">
+                <img src={logo} alt="logo" className="img-fluid " />
                 We-Meet
               </h1>
             </a>

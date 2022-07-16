@@ -5,7 +5,7 @@ function Footer() {
     <div>
       <>
         {/* Footer */}
-        <footer>
+        <footer className=''>
           <h1 className="display-5 fw-bold text-black m-5">
             <img src={logo} alt="logo" className="img-fluid" />
             We-Meet
@@ -14,7 +14,7 @@ function Footer() {
             className="container-fluid bg-primary text-white text-center"
             data-aos="zoom-in"
           >
-            <div className="row bg-primary d-flex align-items-center justify-content-center">
+            <div className="row bg-primary d-flex align-items-center justify-content-center custom-bg">
               <div className="col m-2 p-5">
                 <h1 className="text-white">Experience more together</h1>
               </div>

@@ -1,28 +1,23 @@
 import './App.css';
-import Banner from './components/Banner';
-import Navbar from './components/Navbar';
-import Content from './components/Content';
-import Carousel from './components/Carousel';
-import Features from './components/Features';
-import Product from './components/Product';
-import Footer from './components/Footer';
+import React,{useEffect} from 'react'
+import { BrowserRouter } from "react-router-dom";
+import MainRouter from "./MainRouter";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration : 500
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <Navbar/>
-      <Banner />
-      <Content />
-      <Carousel />
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
 
-      <Product />
-      <Features />
-      <Features />
-      <Features />
-      <Features />
-
-      <Footer />
-    </div>
   );
 }
 
